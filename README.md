@@ -30,6 +30,13 @@ Sure! The way it works is:
  In my code when I instantiate the browser - i use new RemoteWebDriver and point to the
  URL of the hub. and my tests run in Amazon EC2 machine.
  ===========================
+ RESTApi automation framework - yes and you are doing it right now in your current project. Not little bit, not in previos projects, Or you just exposed to it.
+ Sell them what they need. Of course you can mention your overall skillset.
+ -------
+ Whenever you are talking about your skills, current role in project
+ UI test automation with Selenium Webdriver
+ API test automation with RestAssured, Postman etc
+ DATABASE test automation SQL, JDBC
  
  
  
