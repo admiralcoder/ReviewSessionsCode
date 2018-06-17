@@ -25,7 +25,7 @@ public class EtsySteps {
 	   WebDriverManager.chromedriver().setup();
 	   driver = new ChromeDriver();
 	   driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	   driver.manage().window().fullscreen();
+	  // driver.manage().window().fullscreen();
 	   driver.get("https://etsy.com");
 	   Assert.assertEquals("Etsy.com | Shop for anything from creative people everywhere",
 			   driver.getTitle());
@@ -36,12 +36,13 @@ public class EtsySteps {
 		this.keyword=keyword;
 		etsy = new EtsyPage(driver);
 		etsy.searchBox.sendKeys(keyword + Keys.ENTER);
+		System.out.println("SEARCHING FOR " + keyword);
 	}
 
 	@Then("Search results should be displayed")
 	public void search_results_should_be_displayed() {
 		Assert.assertTrue(driver.getTitle().toLowerCase().startsWith(keyword));
-	
+		driver.quit();
 	}
 
 }
