@@ -13,3 +13,5 @@ maven-failsafe plugin vs maven-surefire plugin
 command to run feature files in paralell:
 
 mvn -Dtest=SomeTests -DfailIfNoTests=false verify
+
+PIZZA BREAK TILL 2:42 PM EST
