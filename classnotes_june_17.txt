@@ -26,7 +26,31 @@ maven-failsafe plugin vs maven-surefire plugin
 command to run feature files in paralell:
 
 mvn -Dtest=SomeTests -DfailIfNoTests=false verify
+========================
+Set up grid steps:
 
+If you have aws ec2 machine then login there.
+If you not have it do below steps in your main, local machine:
+
+1) Goto https://codoid.com/visgrid/ and download VisGrid 1.19
+2) Unzip that zipped folder
+3) Update the chromedriver that comes with VisGrid:
+	1) download latest chromedriver from seleniumhq and unzip it and copy chromedriver file
+	2) goto VisGrid unzipped folder > drivers > chrome > paste your chromedriver
+	3) delete old one and rename yours to match the deleted one's name
+4) Goto VisGrid folder and run the jar file
+5) launch hub and few nodes
+
+6) Goto line where you are invoking WebDriver.
+	WebDriverManager.chromedriver().setup();
+	driver = new ChromeDriver();
+		replace with:
+	DesiredCapabilities caps = DesiredCapabilities.chrome();
+	caps.setPlatform(Platform.ANY);
+	driver = new RemoteWebDriver(
+			             new URL("http://34.223.219.142:4444/wd/hub"),
+			   			   caps);
+==============================
 
 
 
